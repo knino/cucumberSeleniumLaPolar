@@ -5,5 +5,6 @@ Feature: Test functionality of search from mercadolibre site
      When Enter Search criteria
      And Click on search button
      Then Result match the criteria
+    And Close Browser
 
     Example: Search cheapest nintendo Switch console

@@ -38,4 +38,8 @@ public class BaseClass {
         find(locator).click();
     }
 
+    public void sendKeys(String locator, String keys){
+        find(locator).sendKeys(keys);
+    }
+
 }
