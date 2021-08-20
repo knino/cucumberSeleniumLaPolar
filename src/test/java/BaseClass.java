@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseClass {
@@ -42,4 +43,20 @@ public class BaseClass {
         find(locator).sendKeys(keys);
     }
 
-}
+    public void selectFromDropDownByValue(String locator, String value){
+        Select dropdown = new Select(find(locator));
+        dropdown.deselectByValue(value);
+    }
+
+    public void selectFromDropDownByIndex(String locator, Integer index){
+        Select dropdown = new Select(find(locator));
+        dropdown.deselectByIndex(index);
+    }
+
+    public void selectFromDropDownByText(String locator, String Text){
+        Select dropdown = new Select(find(locator));
+        dropdown.deselectByVisibleText(Text);
+    }
+
+    }
+

@@ -6,9 +6,7 @@ public class MercadoLibreSteps {
     @Given("^Navigate in mercadolibre$")
     public void navigateToMercadoLibre(){
         ML.navigateToMercadoLibre();
-
-
-    }
+   }
 
     @When("^Enter Search criteria$")
     public void insertCriteria(){
@@ -22,11 +20,13 @@ public class MercadoLibreSteps {
 
     @Then("^Result match the criteria$")
     public void validateCriteria(){
-        System.out.println("Then");
+        ML.clickOrderDropDown();
+        ML.SelectDropDownAscPriceOrder();
+
     }
 
     @And("^Close Browser$")
     public void closeBrowser(){
-       ML.close();
+      // ML.close();
     }
 }

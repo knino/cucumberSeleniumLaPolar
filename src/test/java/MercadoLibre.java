@@ -1,6 +1,8 @@
 public class MercadoLibre extends BaseClass{
-    private String searchButton = "//header/div[1]/form[1]/button[1]";
-    private String searchBar = "//header/div[1]/form[1]/input[1]";
+    private String searchButton = "//button[@type='submit']";
+    private String searchBar = "//input[@class='nav-search-input']";
+    private String dropDownOrderByButton = "//*[@class='andes-dropdown__trigger']";
+    private String dropDownOrderBy = "//*[@value='price_asc']";
     public MercadoLibre(){
         super(driver);
     }
@@ -15,6 +17,15 @@ public class MercadoLibre extends BaseClass{
 
     public void sendCriteria() {
         sendKeys(searchBar, "consola nintendo switch");
+    }
+
+    public void clickOrderDropDown(){
+        clickElement(dropDownOrderByButton);
+    }
+
+    public void SelectDropDownAscPriceOrder(){
+
+        clickElement(dropDownOrderBy);
     }
 
     public void close() {
