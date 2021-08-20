@@ -6,7 +6,7 @@ public class MercadoLibreSteps {
     @Given("^Navigate in mercadolibre$")
     public void navigateToMercadoLibre(){
         ML.navigateToMercadoLibre();
-        System.out.println("given");
+        ML.clickSearch();
 
     }
 
