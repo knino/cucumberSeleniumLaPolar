@@ -1,3 +1,6 @@
+package pages;
+
+import org.junit.rules.ExpectedException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,6 +9,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
     protected static WebDriver driver;
@@ -16,6 +24,7 @@ public class BaseClass {
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 10);
+        driver.manage().window().maximize();
     }
 
     public BaseClass(WebDriver driver){
@@ -35,6 +44,8 @@ public class BaseClass {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
 
+    private String getTextTitle(String locator){ return driver.getTitle(); }
+
     public void clickElement(String locator){
         find(locator).click();
     }
@@ -43,19 +54,27 @@ public class BaseClass {
         find(locator).sendKeys(keys);
     }
 
-    public void selectFromDropDownByValue(String locator, String value){
-        Select dropdown = new Select(find(locator));
-        dropdown.deselectByValue(value);
+
+    public String textTitle(String locator){
+        return getTextTitle(locator);
     }
 
-    public void selectFromDropDownByIndex(String locator, Integer index){
-        Select dropdown = new Select(find(locator));
-        dropdown.deselectByIndex(index);
+
+    public String getAtribute(String locator){
+       return find(locator).getAttribute("class");
     }
 
-    public void selectFromDropDownByText(String locator, String Text){
-        Select dropdown = new Select(find(locator));
-        dropdown.deselectByVisibleText(Text);
+    public String validateUrl(){
+        driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
+        return driver.getCurrentUrl();
+    }
+
+    public void waitForPage(){
+        try {
+            Thread.sleep(700);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     }
