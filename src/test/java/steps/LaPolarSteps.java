@@ -62,12 +62,6 @@ public class LaPolarSteps {
     }
     @And("^login should be Failed$")
     public void validateRegister(){
-        Boolean result=true;
-        System.out.println(LP.ValidateLoggedIn());
-        if (LP.ValidateLoggedIn() != "https://www.lapolar.cl/Iniciar-Sesion/"){
-            result = false;
-        }
-        System.out.println("resultado del bool " + result);
-       Assert.assertEquals("Error. Login was successful","https://www.lapolar.cl/Cuenta/?registration=submitted",LP.ValidateLoggedIn());
+       Assert.assertNotEquals("Error. Login was successful","https://www.lapolar.cl/Cuenta/?registration=submitted",""+LP.validateUrl());
     }
 }

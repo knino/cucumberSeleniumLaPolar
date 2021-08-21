@@ -75,11 +75,11 @@ public class LaPolar extends BaseClass{
     }
 
     public void sendRegisterDni(){
-        this.sendKeys(inputDni, "1-3");
+        this.sendKeys(inputDni, "1-9");
     }
 
     public void sendRegisterEmail(){
-        this.sendKeys(inputEmail, "testing@test.cl");
+        this.sendKeys(inputEmail, "testing@testingmean.cl");
     }
 
     public void clickMaleGender(){
