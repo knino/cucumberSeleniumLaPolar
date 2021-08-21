@@ -25,12 +25,9 @@ public class LaPolarSteps {
 
     @Then("^login should be successful$")
     public void validateLogin(){
-        Boolean result=true;
         LP.clickLoginButton();
-        if (LP.ValidateLoggedIn() != "https://www.lapolar.cl/Cuenta/"){
-            result = false;
-        }
-        Assert.assertFalse("Error trying logged in",result);
+        LP.waitingChange();
+       Assert.assertEquals("Error trying logged in", "https://www.lapolar.cl/Cuenta/", LP.validateUrl());
     }
 
 

@@ -7,7 +7,7 @@ public class LaPolar extends BaseClass{
     private String goToLogin = "//span[contains(text(),'Iniciar Sesión / registrarse')]";
     private String passwordInput = "//input[@id='login-form-password']";
     private String buttonLogin = "//button[contains(text(),'Ingresar')]";
-    private String email = "test@tessst.cl";
+    private String email = "test@tesst.cl";
     private String password = "test123";
     private String inputName = "//input[@id='registration-form-fname']";
     private String inputLastName = "//input[@id='registration-form-lname']";

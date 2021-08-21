@@ -8,6 +8,8 @@ Feature: Login Functionality Feature
     And logs in using email as “test@test.cl” and Password “test123“
     Then login should be successful
 
+
+
   @Register
   Scenario:  Verify if register is validating required field Rut.
     Given user navigates to LaPolar/register page

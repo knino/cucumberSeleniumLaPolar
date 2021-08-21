@@ -9,7 +9,7 @@ import pages.BaseClass;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/resources/features", glue="steps" , publish = true, monochrome = true, tags = "@Register")
+@CucumberOptions(features="src/test/resources/features", glue="steps" , publish = true, monochrome = true, tags = "@Login")
 
 
 public class TestRunner {
